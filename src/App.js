@@ -8,6 +8,7 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import { NASA_API_KEY } from './config'
 const styles = {
   card: {
     maxWidth: 345,
@@ -22,7 +23,7 @@ class App extends Component {
     super(props)
   }
   componentDidMount(){
-    const nasaUrl = "https://api.nasa.gov/neo/rest/v1/feed?start_date=START_DATE&end_date=END_DATE&api_key=API_KEY"
+    const nasaUrl = `https://api.nasa.gov/neo/rest/v1/feed?start_date=${START_DATE}&end_date=${END_DATE}&api_key=${NASA_API_KEY}`
   }
   render() {
     return (
