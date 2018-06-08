@@ -20,14 +20,17 @@ const styles = {
     paddingTop: '56.25%', // 16:9
   },
 };
-const START_DATE = moment('10/04/2017');
-const END_DATE = moment('10/04/2018');
+const START_DATE = '10/04/2017';
+const END_DATE = '10/04/2018';
 class App extends Component {
   constructor(props){
     super(props)
   }
   componentDidMount(){
     const nasaUrl = `https://api.nasa.gov/neo/rest/v1/feed?start_date=${START_DATE}&end_date=${END_DATE}&api_key=${NASA_API_KEY}`
+    axios.get(nasaUrl)
+      .then((res) => console.log(res))
+      .catch((err) => console.log(err))
   }
   render() {
     return (
