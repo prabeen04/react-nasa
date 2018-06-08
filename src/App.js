@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
 import PropTypes from 'prop-types';
+import axios from 'axios';
+import moment from "moment";
 import { withStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
@@ -18,6 +20,8 @@ const styles = {
     paddingTop: '56.25%', // 16:9
   },
 };
+const START_DATE = moment('10/04/2017');
+const END_DATE = moment('10/04/2018');
 class App extends Component {
   constructor(props){
     super(props)
