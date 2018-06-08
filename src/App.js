@@ -20,16 +20,24 @@ const styles = {
     paddingTop: '56.25%', // 16:9
   },
 };
-const START_DATE = '10/04/2017';
-const END_DATE = '10/04/2018';
+const START_DATE = '2018-06-01';
+const END_DATE = '2018-06-07';
 class App extends Component {
   constructor(props){
     super(props)
+    this.state = {
+      nasaData:{}
+    }
   }
   componentDidMount(){
-    const nasaUrl = `https://api.nasa.gov/neo/rest/v1/feed?start_date=${START_DATE}&end_date=${END_DATE}&api_key=${NASA_API_KEY}`
+    const nasaUrl = `https://api.nasa.gov/planetary/apod?api_key=${NASA_API_KEY}`
     axios.get(nasaUrl)
-      .then((res) => console.log(res))
+      .then((res) => {
+        console.log(res.data)
+        this.setState({
+          nasa: res.data
+        })
+      })
       .catch((err) => console.log(err))
   }
   render() {
