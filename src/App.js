@@ -18,12 +18,15 @@ const styles = {
   },
 };
 class App extends Component {
+  constructor(props){
+    super(props)
+  }
+  // const { classes } =this.props;
   render() {
     return (
       <div>
-        <Card className={classes.card}>
+        <Card>
           <CardMedia
-            className={classes.media}
             image="/static/images/cards/contemplative-reptile.jpg"
             title="Contemplative Reptile"
           />
@@ -50,4 +53,8 @@ class App extends Component {
   }
 }
 
-export default App;
+App.propTypes = {
+  // classes: PropTypes.object.isRequired,
+};
+
+export default withStyles(styles)(App);
