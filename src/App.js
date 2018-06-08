@@ -46,13 +46,8 @@ class App extends Component {
         {
           this.state.nasaData.title
             ? <Card>
-              <CardMedia
-                src={this.state.nasaData.url}
-                title={this.state.nasaData.date}
-                style={{height:600}}
-              />
               <CardContent>
-                <img src={this.state.nasaData.url} alt=""/>
+                <img src={this.state.nasaData.url} alt=""style={{width: 650,height:400}}/>
                 <Typography gutterBottom variant="headline" component="h2">
                 {this.state.nasaData.url}
           </Typography>
