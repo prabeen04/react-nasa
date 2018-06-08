@@ -47,16 +47,17 @@ class App extends Component {
           this.state.nasaData.title
             ? <Card>
               <CardMedia
-                image="http://lorempixel.com/1000/400/"
-                title="Contemplative Reptile"
+                src={this.state.nasaData.url}
+                title={this.state.nasaData.date}
+                style={{height:600}}
               />
               <CardContent>
+                <img src={this.state.nasaData.url} alt=""/>
                 <Typography gutterBottom variant="headline" component="h2">
-                  Lizard
+                {this.state.nasaData.url}
           </Typography>
                 <Typography component="p">
-                  Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-                  across all continents except Antarctica
+                {this.state.nasaData.explanation}
           </Typography>
               </CardContent>
               <CardActions>
