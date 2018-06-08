@@ -23,19 +23,19 @@ const styles = {
 const START_DATE = '2018-06-01';
 const END_DATE = '2018-06-07';
 class App extends Component {
-  constructor(props){
+  constructor(props) {
     super(props)
     this.state = {
-      nasaData:{}
+      nasaData: {}
     }
   }
-  componentDidMount(){
+  componentDidMount() {
     const nasaUrl = `https://api.nasa.gov/planetary/apod?api_key=${NASA_API_KEY}`
     axios.get(nasaUrl)
       .then((res) => {
         console.log(res.data)
         this.setState({
-          nasa: res.data
+          nasaData: res.data
         })
       })
       .catch((err) => console.log(err))
@@ -43,29 +43,34 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Card>
-          <CardMedia
-            image="http://lorempixel.com/1000/400/"
-            title="Contemplative Reptile"
-          />
-          <CardContent>
-            <Typography gutterBottom variant="headline" component="h2">
-              Lizard
+        {
+          this.state.nasaData.title
+            ? <Card>
+              <CardMedia
+                image="http://lorempixel.com/1000/400/"
+                title="Contemplative Reptile"
+              />
+              <CardContent>
+                <Typography gutterBottom variant="headline" component="h2">
+                  Lizard
           </Typography>
-            <Typography component="p">
-              Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-              across all continents except Antarctica
+                <Typography component="p">
+                  Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
+                  across all continents except Antarctica
           </Typography>
-          </CardContent>
-          <CardActions>
-            <Button size="small" color="primary">
-              Share
+              </CardContent>
+              <CardActions>
+                <Button size="small" color="primary">
+                  Share
           </Button>
-            <Button size="small" color="primary">
-              Learn More
+                <Button size="small" color="primary">
+                  Learn More
           </Button>
-          </CardActions>
-        </Card>
+              </CardActions>
+            </Card>
+            : <p>Loading...</p>
+        }
+
       </div>
     );
   }
