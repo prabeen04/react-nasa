@@ -21,13 +21,15 @@ class App extends Component {
   constructor(props){
     super(props)
   }
-  // const { classes } =this.props;
+  componentDidMount(){
+    const nasaUrl = "https://api.nasa.gov/neo/rest/v1/feed?start_date=START_DATE&end_date=END_DATE&api_key=API_KEY"
+  }
   render() {
     return (
       <div>
         <Card>
           <CardMedia
-            image="/static/images/cards/contemplative-reptile.jpg"
+            image="http://lorempixel.com/1000/400/"
             title="Contemplative Reptile"
           />
           <CardContent>
