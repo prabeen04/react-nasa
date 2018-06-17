@@ -37,11 +37,11 @@ class NasaRover extends Component {
     render() {
         return (
             <div>
-               {this.state.fetching
-            ?<p>Fetching images .....</p>
-            : <div>
-                <h3>Images are Ready to displayed</h3>
-            </div> }
+                {this.state.fetching
+                    ? <p>Fetching images .....</p>
+                    : <div>
+                        <RoverImages images={this.state.images} />
+                    </div>}
             </div>
         )
     }
