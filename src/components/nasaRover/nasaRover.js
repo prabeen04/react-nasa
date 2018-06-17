@@ -10,6 +10,15 @@ class NasaRover extends Component {
 
         this.state = {}
     }
+    componentDidMount(){
+        axios.get(apiURL)
+        .then(res => {
+            console.log(res.data)
+        })
+        .catch(err => {
+            console.log(err)
+        })
+    }
   render() {
     return (
       <div>
