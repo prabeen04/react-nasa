@@ -25,19 +25,29 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      nasaData: {}
+      nasaData: {},
+      fetching: false;
     }
   }
   componentDidMount() {
+    this.setState({
+      fetching: true
+    })
     const nasaUrl = `https://api.nasa.gov/planetary/apod?api_key=${NASA_API_KEY}`
     axios.get(nasaUrl)
       .then((res) => {
         console.log(res.data)
         this.setState({
-          nasaData: res.data
+          nasaData: res.data,
+          fetching: false
         })
       })
-      .catch((err) => console.log(err))
+      .catch((err) =>{
+        this.setState({
+          error: err,
+          fetching: false
+        })
+      })
   }
   render() {
     return (
