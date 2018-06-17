@@ -14,11 +14,14 @@ class NasaRover extends Component {
         }
     }
     componentDidMount() {
+        this.setState({
+            fetching: true
+        })
         axios.get(apiURL)
             .then(res => {
                 console.log(res.data)
                 this.setState({
-                    images: res.data,
+                    images: res.data.photos,
                     fetching: false
                 })
             })
@@ -33,7 +36,11 @@ class NasaRover extends Component {
     render() {
         return (
             <div>
-                <h1>NasaRover Component</h1>
+               {this.state.fetching
+            ?<p>Fetching images .....</p>
+            : <div>
+                <h3>Images are Ready to displayed</h3>
+            </div> }
             </div>
         )
     }
