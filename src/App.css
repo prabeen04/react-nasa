@@ -1,0 +1,18 @@
+.rover-wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+}
+.rover-image-wrapper{
+    padding: 1rem;
+    margin: 0.5rem;
+    box-shadow: 1px 0px 18px 2px #aaa;
+    width: 300px;
+}
+
+.rover-image{
+    height: auto;
+    width: 100%;
+}
