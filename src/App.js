@@ -20,8 +20,6 @@ const styles = {
     paddingTop: '56.25%', // 16:9
   },
 };
-const START_DATE = '2018-06-01';
-const END_DATE = '2018-06-07';
 class App extends Component {
   constructor(props) {
     super(props)
