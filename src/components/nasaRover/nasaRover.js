@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { NASA_API_KEY } from '../../config/index';
 import axios from 'axios';
+import RoverImages from "./roverImages";
 
 const apiURL = `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=10&api_key=${NASA_API_KEY}`;
 
