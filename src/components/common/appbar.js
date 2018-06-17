@@ -21,7 +21,7 @@ const styles = {
   },
 };
 
-function AppBar(props) {
+const MyAppBar = (props) => {
   const { classes } = props;
   return (
     <div className={classes.root}>
@@ -40,8 +40,8 @@ function AppBar(props) {
   );
 }
 
-AppBar.propTypes = {
+MyAppBar.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(AppBar);
+export default withStyles(styles)(MyAppBar);

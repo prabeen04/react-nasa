@@ -10,7 +10,8 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import { NASA_API_KEY } from './config'
+import { NASA_API_KEY } from './config';
+import MyAppBar from './components/common/appbar';
 const styles = {
   card: {
     maxWidth: 345,
@@ -41,6 +42,7 @@ class App extends Component {
   render() {
     return (
       <div>
+        <MyAppBar />
         {
           this.state.nasaData.title
             ? <Card>
