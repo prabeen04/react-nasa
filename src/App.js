@@ -12,6 +12,8 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import { NASA_API_KEY } from './config';
 import MyAppBar from './components/common/appbar';
+import NasaRover from './components/nasaRover/nasaRover';
+
 const styles = {
   card: {
     maxWidth: 345,
@@ -77,7 +79,7 @@ class App extends Component {
              </Card>
             : <p>Loading...</p>
         }
-
+<NasaRover/>
       </div>
     );
   }

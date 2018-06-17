@@ -31,7 +31,7 @@ const MyAppBar = (props) => {
             <MenuIcon />
           </IconButton>
           <Typography variant="title" color="inherit" className={classes.flex}>
-            Title
+            NASA 
           </Typography>
           <Button color="inherit">Explore Nasa</Button>
         </Toolbar>
