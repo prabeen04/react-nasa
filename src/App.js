@@ -26,7 +26,8 @@ class App extends Component {
     super(props)
     this.state = {
       nasaData: {},
-      fetching: false;
+      fetching: false,
+      error: null
     }
   }
   componentDidMount() {
@@ -56,24 +57,24 @@ class App extends Component {
         {
           this.state.nasaData.title
             ? <Card>
-              <CardContent>
-                <img src={this.state.nasaData.url} alt=""style={{width: 650,height:400}}/>
-                <Typography gutterBottom variant="headline" component="h2">
-                {this.state.nasaData.url}
-          </Typography>
-                <Typography component="p">
-                {this.state.nasaData.explanation}
-          </Typography>
-              </CardContent>
-              <CardActions>
-                <Button size="small" color="primary">
-                  Share
-          </Button>
-                <Button size="small" color="primary">
-                  Learn More
-          </Button>
-              </CardActions>
-            </Card>
+                <CardContent>
+                  <img src={this.state.nasaData.url} alt=""style={{width: 650,height:400}}/>
+                  <Typography gutterBottom variant="headline" component="h2">
+                  {this.state.nasaData.url}
+                </Typography>
+                      <Typography component="p">
+                      {this.state.nasaData.explanation}
+                </Typography>
+                    </CardContent>
+                    <CardActions>
+                      <Button size="small" color="primary">
+                        Share
+                </Button>
+                      <Button size="small" color="primary">
+                        Learn More
+                </Button>
+                    </CardActions>
+             </Card>
             : <p>Loading...</p>
         }
 
