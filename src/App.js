@@ -62,7 +62,7 @@ class App extends Component {
                 <CardContent>
                   <img src={this.state.nasaData.url} alt=""style={{width: 650,height:400}}/>
                   <Typography gutterBottom variant="headline" component="h2">
-                  {this.state.nasaData.url}
+                 Image of the Day
                 </Typography>
                       <Typography component="p">
                       {this.state.nasaData.explanation}
